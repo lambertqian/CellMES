@@ -1,0 +1,26 @@
+{% extends 'demo/bootstrap.html' %}
+
+{% load bootstrap3 %}
+
+{% block bootstrap3_content %}
+    <div class="container">
+        <h1>{% block title %}(no title){% endblock %}</h1>
+
+        <p>
+            <li><a href="{% url 'home' %}">home 主页</a></li>
+            <li><a href="{% url 'formset_default' %}">formset 表单中的控件</a></li>
+            <li><a href="{% url 'form_default' %}">form 表单</a></li>
+            <li><a href="{% url 'form_by_field' %}">form_by_field 表单字段</a></li>
+            <li><a href="{% url 'form_horizontal' %}">form_horizontal 水平表单</a></li>
+            <li><a href="{% url 'form_inline' %}">form_inline 内联表单</a></li>
+            <li><a href="{% url 'form_with_files' %}">form_with_files 文件上传</a></li>
+            <li><a href="{% url 'pagination' %}">pagination 表单分页</a></li>
+            <li><a href="{% url 'misc' %}">miscellaneous 其它</a></li>
+        </p>
+
+        {% autoescape off %}{% bootstrap_messages %}{% endautoescape %}
+
+        {% block content %}(no content){% endblock %}
+    </div>
+
+{% endblock %}
